@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7) blur(1px);
+    transform: scale(1.02);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 40px 30px;
+    width: 400px;
+    text-align: center;
+    z-index: 1;
+}
+
+#container h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown-btn {
+    background: linear-gradient(to right, #d46184, #f8a5c2);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+.dropdown-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#dropdown-settings {
+    display: none;
+    background: linear-gradient(to right, #d46184, #f8a5c2);
+    padding: 20px;
+    border-radius: 30px;
+    height: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 120%;
+    left: 0;
+    z-index: 100;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 250px;
+    transform: translate(+20%,+10%);
+}
+
+#all {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+#all .card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    cursor: pointer;
+}
+
+.card .front {
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card .back {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+#all .card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+@media (max-width: 576px) {
+    #container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #container h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #all {
+        gap: 5px;
+    }
+
+    #all .card {
+        gap: 5px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    #container {
+        width: 80%;
+    }
+
+    #container h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #container {
+        width: 70%;
+    }
+
+    #container h1 {
+        font-size: 2.2rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #container {
+        width: 400px;
+    }
+}
